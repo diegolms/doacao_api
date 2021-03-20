@@ -1,9 +1,9 @@
 package main
 
 import (
-		"fmt"
+		routes "doacao_api/routes"
 		)
 
 func main(){
-    fmt.Println("hello")
+    routes.StartGin()
 }

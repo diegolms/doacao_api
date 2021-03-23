@@ -24,7 +24,7 @@ func StartGin() {
                 produtos := v1.Group("/produtos")
                 {
                                    produtos.GET("/", produtoController.GetAllProdutos)
-                                   //produtos.POST("/", produtoController.CreateProduto)
+                                   produtos.POST("/", produtoController.CreateProdutos)
                                    //produtos.DELETE("/", produtoController.DeleteProduto)
                 }
        }

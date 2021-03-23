@@ -2,6 +2,7 @@ package routes
 import (
        "net/http"
         doacaoController "doacao_api/controllers/doacao"
+        produtoController "doacao_api/controllers/produto"
        "github.com/gin-gonic/gin"
        cors "github.com/rs/cors/wrapper/gin"       
 )
@@ -15,7 +16,16 @@ func StartGin() {
        {
                 doacoes := v1.Group("/doacoes")
                 {
-					doacoes.GET("/listar", doacaoController.GetAllDoacoes)
+					doacoes.GET("/", doacaoController.GetAllDoacoes)
+                                   //doacoes.POST("/", doacaoController.CreateDoacao)
+                                   //doacoes.DELETE("/", doacaoController.DeleteDoacao)
+                }
+
+                produtos := v1.Group("/produtos")
+                {
+                                   produtos.GET("/", produtoController.GetAllProdutos)
+                                   //produtos.POST("/", produtoController.CreateProduto)
+                                   //produtos.DELETE("/", produtoController.DeleteProduto)
                 }
        }
 
